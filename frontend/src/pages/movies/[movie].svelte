@@ -29,12 +29,23 @@ const submit = () => {
 }
 </script>
 
+<div class="main-container">
 <a href={$url('/movies')}> Go Back!! </a>
 
+
 {#if movie}
+    {#if movie.videos[0]}
     <div class="video-container">
         <Video url={movie.videos[0].url} />
     </div>
+
+    <div>
+        <label> Video Url </label>
+        <input type="text"
+        bind:value={movie.videos[0].url}
+        />
+    </div>
+    {/if}
 
     <div>
         <div>
@@ -49,12 +60,7 @@ const submit = () => {
             bind:value={movie.release_date}
             />
         </div>
-        <div>
-            
-            <input type="text"
-            bind:value={movie.videos[0].url}
-            />
-        </div>
+
         <div>
             <label> Movie Image </label>
             <input type="text"
@@ -90,9 +96,14 @@ const submit = () => {
 
 {/if}
 
+</div>
+
 <style>
     .video-container {
         max-width: 400px;
         max-height: 400px;
+    }
+    .main-container {
+        padding: 30px 30px;
     }
 </style>

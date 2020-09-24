@@ -1,11 +1,11 @@
 
 /**
  * @sveltech/routify 1.9.9
- * File generated Wed Sep 23 2020 23:22:13 GMT-0400 (Eastern Daylight Time)
+ * File generated Wed Sep 23 2020 23:32:24 GMT-0400 (Eastern Daylight Time)
  */
 
 export const __version = "1.9.9"
-export const __timestamp = "2020-09-24T03:22:13.202Z"
+export const __timestamp = "2020-09-24T03:32:24.153Z"
 
 //buildRoutes
 import { buildClientTree } from "@sveltech/routify/runtime/buildRoutes"

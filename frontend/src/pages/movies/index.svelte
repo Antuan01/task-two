@@ -13,12 +13,18 @@ onMount(async () => {
 
 </script>
 
-<p> las movies bebe </p>
-
 <div class="movies">
-	{#each movies as movie, i}
-        <Card index={i} {...movie} />
-	{:else}
-		<p>loading...</p>
-	{/each}
+    {#if movies.length > 0}
+        {#each movies as movie, i}
+            <Card index={i} {...movie} />
+        {/each}
+    {:else}
+        <p> loading...</p>
+    {/if}
 </div>
+
+<style>
+    .movies {
+    padding: 30px;
+    }
+</style>

@@ -1,12 +1,17 @@
 <script>
-    import RoutifyIntro from './example/_components/RoutifyIntro.svelte'
-    import { metatags } from '@sveltech/routify'
+
     import {url} from '@sveltech/routify'
-    metatags.title = 'My Routify app'
-    metatags.description = 'Description coming soon...'
+
 </script>
 
-<a href={$url('/movies')}>
-    Blog
-</a>
-<RoutifyIntro />
+<div class="home-container">
+    <h1> See the movies catalog </h1>
+    <a href={$url('/movies')}> See Me </a>
+</div>
+
+
+<style>
+    .home-container {
+        padding: 30px;
+    }
+</style>
