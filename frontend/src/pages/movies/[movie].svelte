@@ -27,63 +27,81 @@ const submit = () => {
             loading = false
         })
 }
+
 </script>
 
-<div class="main-container">
-<a href={$url('/movies')}> Go Back!! </a>
+<div class="p-6">
+<a href={$url('/movies')}>
+    <button
+    class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+    > 
+    Go Back!! </button> </a>
 
+
+    <div class="container-mix" >
 
 {#if movie}
     {#if movie.videos[0]}
-    <div class="video-container">
+    <!-- <div class="video-container">
         <Video url={movie.videos[0].url} />
-    </div>
+    </div> -->
 
-    <div>
-        <label> Video Url </label>
-        <input type="text"
+    <div class="p-2 flex items-center justify-center" >
+        <label class="px-2"> Video Url </label>
+        <input 
+        class="shadow appearance-none border rounded w-1/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+        type="text"
         bind:value={movie.videos[0].url}
         />
     </div>
     {/if}
 
-    <div>
-        <div>
-        <label> Title </label>
-        <input type="text"
+    
+        <div class="p-2 flex items-center justify-center">
+        <label class="px-2"> Title: </label>
+        <input
+        class="shadow appearance-none border rounded w-1/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        type="text"
         bind:value={movie.title}
         />
         </div>
-        <div>
-            <label> Release date </label>
-            <input type="text"
+        <div class="p-2 flex items-center justify-center">
+            <label class="px-2"> Release date: </label>
+            <input
+            class="shadow appearance-none border rounded w-1/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            type="text"
             bind:value={movie.release_date}
             />
         </div>
 
-        <div>
-            <label> Movie Image </label>
-            <input type="text"
+        <div class="p-2 flex items-center justify-center">
+            <label class="px-2"> Movie Image: </label>
+            <input
+            class="shadow appearance-none border rounded w-1/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            type="text"
             bind:value={movie.images[0].thumbnail}
             />
         </div>
-        <div>
-            <label> Movie Language </label>
-            <input type="text"
+        <div class="p-2 flex items-center justify-center">
+            <label> Movie Language: </label>
+            <input
+            class="shadow appearance-none border rounded w-1/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            type="text"
             bind:value={movie.language}
             />
         </div>
-        <div>
-            <label> Director </label>
-            <input type="text"
+        <div class="p-2 flex items-center justify-center">
+            <label> Director: </label>
+            <input
+            class="shadow appearance-none border rounded w-1/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            type="text"
             bind:value={movie.details[0].director}
             />
         </div>
 
-    </div>
-
-    <div>
+    <div class="p-2 flex items-center justify-center">
         <button
+        class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
         on:click={submit}
         disabled={loading}
         > Submit! </button>
@@ -92,18 +110,16 @@ const submit = () => {
             <p> submiting...</p>
         {/if}
     </div>
-
-
-{/if}
+    
+    {/if}
+</div>
+    
 
 </div>
-
 <style>
-    .video-container {
-        max-width: 400px;
-        max-height: 400px;
-    }
-    .main-container {
-        padding: 30px 30px;
+    .container-mix{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
     }
 </style>

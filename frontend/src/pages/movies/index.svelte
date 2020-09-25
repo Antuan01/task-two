@@ -13,7 +13,7 @@ onMount(async () => {
 
 </script>
 
-<div class="movies">
+<div class="flex p-8 flex-wrap">
     {#if movies.length > 0}
         {#each movies as movie, i}
             <Card index={i} {...movie} />
@@ -23,8 +23,3 @@ onMount(async () => {
     {/if}
 </div>
 
-<style>
-    .movies {
-    padding: 30px;
-    }
-</style>

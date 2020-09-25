@@ -5,13 +5,8 @@
 </script>
 
 <div class="home-container">
+    <h1 class="text-red-900 font-bold">This heading is styled by Tailwind CSS</h1>
     <h1> See the movies catalog </h1>
     <a href={$url('/movies')}> See Me </a>
 </div>
 
-
-<style>
-    .home-container {
-        padding: 30px;
-    }
-</style>
